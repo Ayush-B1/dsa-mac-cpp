@@ -4,15 +4,15 @@ using namespace std;
 
 int searching(int arr[], int size, int key){
     int starting_point = 0;
-    int endling_point = size;
+    int ending_point = size;
 
     while(starting_point<=endling_point){
         int mid_element;
-        mid_element = (starting_point + endling_point)/2;
+        mid_element = (starting_point + ending_point)/2;
         if(arr[mid_element] == key){
             return mid_element;
         } else if(arr[mid_element]>key){
-            endling_point = mid_element-1;
+            ending_point = mid_element-1;
         }else{
             starting_point = mid_element + 1;
         }
