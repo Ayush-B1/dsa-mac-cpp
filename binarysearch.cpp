@@ -6,7 +6,7 @@ int searching(int arr[], int size, int key){
     int starting_point = 0;
     int ending_point = size;
 
-    while(starting_point<=endling_point){
+    while(starting_point<=ending_point){
         int mid_element;
         mid_element = (starting_point + ending_point)/2;
         if(arr[mid_element] == key){
