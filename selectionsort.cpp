@@ -2,38 +2,26 @@
 
 using namespace std;
 
-int main(){
-    int n;
-    cout<<"Enter the Number of elements you want in your array: ";
-    cin>>n;
-    cout<<endl;
-
-    int arr[n];
-    cout<<"Enter the Value: "<<endl;
-    for(int i = 0; i<n; i++){
-        cin>>arr[i];
-    }cout<<endl;
-
-    cout<<"The array before sorting: ";
-    for(int i = 0; i<n; i++){
-        cout<<arr[i]<<" ";
-    }cout<<endl;
-
-
+void selection(int arr[], int n){
     for(int i = 0; i<n-1; i++){
+        int minimum = i;
         for(int j = i+1; j<n; j++){
-            if(arr[j]<arr[i]){
-                int temp = arr[j];
-                arr[j] = arr[i];
-                arr[i] = temp;
-            }
+            if(arr[minimum] > arr[j])
+                minimum = j;
         }
+        swap(arr[minimum], arr[i]);
     }
+}
 
-    cout<<"Array after sorting: ";
-    for (int i = 0; i<n; i++)
-    {
+void print(int arr[], int n){
+    for(int i = 0; i<n; i++){
         cout<<arr[i]<<" ";
     }cout<<endl;
-       
+}
+
+int main(){
+    int arr[5] = {35, 4, 11, 25, 10};
+
+    selection(arr, 5);
+    print(arr, 5);
 }
